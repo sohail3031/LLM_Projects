@@ -40,6 +40,7 @@ def _streamlit_ui() -> None:
             text_response = openai.chat.completions.create(model="gpt-4.1-mini", messages=messages)
 
         st.write(text_response.choices[0].message.content)
+        os.remove("temp_audio.wav")
 
 if __name__ == '__main__':
     _streamlit_ui()
